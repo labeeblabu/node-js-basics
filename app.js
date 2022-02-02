@@ -6,18 +6,13 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
-
 const app=express();
+const adminRoutes=require(`./routes/admin.js`);
+const shopRoutes = require(`./routes/shop.js`)
 app.use(bodyParser.urlencoded({extended:false}));
-
-app.use(`/addproduct`,(req,res,next) => {
-    res.send(`<form action="/product" method="POST"><input type='text' name="title"><button type = 'submit'>add product</button></form>`);
-})
-app.use("/product",(req, res, next) => {
-    console.log(req.body);
-    res.redirect('/')
-})
-app.use(`/`,(req,res,next) => {
-    res.send(`<h1> hello world</h1>`);
+app.use(adminRoutes)
+app.use(shopRoutes);
+app.use((req, res, next) => {
+    res.status(404).send(`<h1>Error</h1>`)
 })
 app.listen(3000)

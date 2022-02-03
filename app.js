@@ -1,18 +1,21 @@
-// const http = require('http');
-// const routes= require('./routes');
-// const server=http.createServer(routes)
-// server.listen(3000)
-//______________________________________________________________
-
 const express = require('express');
+
+const app = express();
 const bodyParser = require('body-parser');
-const app=express();
-const adminRoutes=require(`./routes/admin.js`);
-const shopRoutes = require(`./routes/shop.js`)
-app.use(bodyParser.urlencoded({extended:false}));
-app.use(adminRoutes)
-app.use(shopRoutes);
-app.use((req, res, next) => {
-    res.status(404).send(`<h1>Error</h1>`)
+const adminRoute=require('./routes/admin')
+const contactUsRoute=require('./routes/contactUs')
+const shopRoute=require('./routes/shop')
+const successRoute=require('./routes/success')
+
+const path = require('path')
+app.use(bodyParser.urlencoded({ extended:false}))
+app.use(express.static(path.join(__dirname, 'public')))
+
+app.use(adminRoute)
+app.use(shopRoute)
+app.use(contactUsRoute)
+app.use(successRoute)
+app.use((req, res, next) =>{
+    res.status(404).sendFile(path.join(__dirname,`views`,`404.html`))
 })
 app.listen(3000)

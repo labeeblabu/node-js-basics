@@ -10,9 +10,25 @@
   },
   "author": "Maximilian Schwarzmüller",
   "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.19.4"
+  },
   "dependencies": {
+    "body": "^5.1.0",
     "body-parser": "^1.19.1",
+    "ejs": "^2.7.4",
     "express": "^4.17.2",
-    "nodemon": "^2.0.15"
-  }
+    "express-handlebars": "^3.0.0",
+    "module": "^1.2.5",
+    "parser": "^0.1.4",
+    "pug": "^2.0.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/labeeblabu/node-js-basics.git"
+  },
+  "bugs": {
+    "url": "https://github.com/labeeblabu/node-js-basics/issues"
+  },
+  "homepage": "https://github.com/labeeblabu/node-js-basics#readme"
 }

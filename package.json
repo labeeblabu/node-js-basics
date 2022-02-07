@@ -1,26 +1,30 @@
 {
-  "name": "node.js",
+  "name": "nodejs-complete-guide",
   "version": "1.0.0",
-  "description": "dd",
-  "main": "index.js",
+  "description": "Complete Node.js Guide",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js",
+    "start-server": "node app.js"
+  },
+  "author": "Maximilian Schwarzmüller",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.18.3"
+  },
   "dependencies": {
     "body-parser": "^1.19.1",
-    "ejs": "^3.1.6",
+    "ejs": "^2.6.1",
     "express": "^4.17.2",
-    "module": "^1.2.5",
-    "mysql2": "^2.3.3",
-    "nodemon": "^2.0.15"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "express-handlebars": "^3.0.0",
+    "mysql2": "^1.7.0",
+    "pug": "^2.0.3"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/labeeblabu/node-js-basics.git"
   },
-  "author": "leb",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/labeeblabu/node-js-basics/issues"
   },
